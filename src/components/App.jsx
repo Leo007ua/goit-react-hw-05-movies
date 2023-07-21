@@ -1,6 +1,6 @@
 // import { lazy } from "react";
 // import { Suspense } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
@@ -22,5 +22,5 @@ export const App = () => {
 
 
 
-// const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
-{/* <Suspense fallback={<Loading />}> */}
+// // const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
+// {/* <Suspense fallback={<Loading />}> */}
