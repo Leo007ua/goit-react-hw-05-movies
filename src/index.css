@@ -10,6 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./image/1639594100_7-abrakadabra-fun-p-zastavki-filmov-7.jpg');
+  /* filter: brightness(0.5); */
 }
 
 code {
@@ -17,12 +18,8 @@ code {
     monospace;
 }
 
-.my-class {
+/* .my-class {
   color: yellowgreen;
   gap:20px;
-}
-.img {
-  border: 1px solid white;
-  border-radius: 5%;
-  margin-top: 20px;
-}
+} */
+

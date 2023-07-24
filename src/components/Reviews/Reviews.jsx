@@ -2,6 +2,7 @@ import { requestMovies } from 'components/services/appi';
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ReviewsStyled from './ReviewsStyled';
 
 const Reviews = () => {
   const [responsedReviews, setResponse] = useState(null);
@@ -26,7 +27,7 @@ const Reviews = () => {
   }, [movieId]);
 
   return (
-    <div>
+    <ReviewsStyled>
       {isLoading && <Loader />}
       {error && <p>Ooops some error occured...Error:{error}</p>}
 
@@ -46,7 +47,7 @@ const Reviews = () => {
           </ul>
         </>
       )}
-    </div>
+    </ReviewsStyled>
   );
 };
 

@@ -27,8 +27,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <h2>Trending today :</h2>
+    
+        <>
+        <div style={{ color: "white" }}>
+        <h2>Trending today :</h2>
       {isLoading && <Loader/>}
       {error && <p>Ooops some error occured...Error:{error}</p>}
       <ul>
@@ -38,6 +40,8 @@ const Home = () => {
           </li>
         ))}
       </ul>
+        </div>
+   
     </>
   );
 };

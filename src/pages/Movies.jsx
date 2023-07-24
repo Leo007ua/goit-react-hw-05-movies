@@ -9,6 +9,7 @@ const Movies = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [movieResult, setMoviesResult] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+
   const location = useLocation();
   const queryValue = searchParams.get('query');
 
@@ -41,27 +42,32 @@ const Movies = () => {
 
   return (
     <>
-      <form onSubmit={formOnSubmit}>
-        <input
-          type="text"
-          name="search"
-          placeholder="Search movies..."
-          required
-          autoComplete="on"
-        />
-        <button type="submit">Search</button>
-      </form>
+      <div>
+        <form onSubmit={formOnSubmit}>
+          <input
+            type="text"
+            name="search"
+            autoComplete="on"
+            autoFocus
+            placeholder="Search movies..."
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
 
-      {isLoading && <Loader />}
-      {error && <p>Ooops some error occured...Error:{error}</p>}
-      <ul>
-        {movieResult &&
-          movieResult.map(movie => (
-            <li key={movie.id}>
-              <Link state={{ from: location }} to={`${movie.id}`}></Link>
-            </li>
-          ))}
-      </ul>
+        {isLoading && <Loader />}
+        {error && <p>Ooops some error occured...Error:{error}</p>}
+        <ul>
+          {movieResult &&
+            movieResult.map(movie => (
+              <li key={movie.id}>
+                <Link state={{ from: location }} to={`${movie.id}`}>
+                    {movie.title}
+                </Link>
+              </li>
+            ))}
+        </ul>
+      </div>
     </>
   );
 };
