@@ -9,7 +9,7 @@ const MovDetails = lazy(() => import('pages/MovieDetails'));
 const Cast = lazy(() => import('./Cast/Cast'));
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 
-export const App = () => {
+const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
@@ -34,3 +34,5 @@ export const App = () => {
     </Suspense>
   );
 };
+
+export default App;
