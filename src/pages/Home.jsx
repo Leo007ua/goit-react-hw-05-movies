@@ -1,7 +1,9 @@
 
 import { requestMovies } from 'components/services/appi';
+import Loader from 'components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   const [trendMovies, setTrendMovies] = useState([]);
@@ -13,8 +15,8 @@ const Home = () => {
       try {
         setIsLoading(true);
         const endPointTrends = '/trending/movie/day';
-        const responseTrends = await requestMovies(endPointTrends);
-        setTrendMovies(responseTrends.results);
+        const responcedTrends = await requestMovies(endPointTrends);
+        setTrendMovies(responcedTrends.results);
       } catch (error) {
         setError(error.message);
       } finally {
@@ -26,12 +28,12 @@ const Home = () => {
 
   return (
     <>
-      <h2>Trending today</h2>
-      {isLoading && <p>Loading...</p>}
-      {error && <p>Error:{error}</p>}
+      <h2>Trending today :</h2>
+      {isLoading && <Loader/>}
+      {error && <p>Ooops some error occured...Error:{error}</p>}
       <ul>
         {trendMovies.map(trendMovies => (
-          <li key={trendMovies.id}>
+          <li className="my-class" key={trendMovies.id} style={{ color: "white" }}>
             <Link to={`movies/${trendMovies.id}`}>{trendMovies.title}</Link>
           </li>
         ))}
