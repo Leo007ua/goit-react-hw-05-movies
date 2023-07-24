@@ -13,7 +13,7 @@ const MovDetails = ({ movieDetails }) => {
       <Link to={backLinkRef.current || '/'}>Go Back</Link>
 
       <ContainerStyled>
-        <img className='img'
+        <img
           src={`https://image.tmdb.org/t/p/w400${movieDetails.poster_path}`}
           alt={`${movieDetails.title}`}
         />

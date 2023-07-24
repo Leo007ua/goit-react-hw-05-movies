@@ -3,6 +3,7 @@ import Loader from 'components/Loader/Loader';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import Container from 'components/Style/PageMovie';
 
 const Movies = () => {
   const [error, setError] = useState(null);
@@ -42,7 +43,7 @@ const Movies = () => {
 
   return (
     <>
-      <div>
+      <Container>
         <form onSubmit={formOnSubmit}>
           <input
             type="text"
@@ -67,7 +68,7 @@ const Movies = () => {
               </li>
             ))}
         </ul>
-      </div>
+      </Container>
     </>
   );
 };
