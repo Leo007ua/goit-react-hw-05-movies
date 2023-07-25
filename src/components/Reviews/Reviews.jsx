@@ -1,4 +1,4 @@
-import { requestMovies } from 'components/services/appi';
+import { requestMovies } from 'services/appi';
 import Loader from 'components/Loader/Loader';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

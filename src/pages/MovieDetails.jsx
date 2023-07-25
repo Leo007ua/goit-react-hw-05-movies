@@ -1,4 +1,4 @@
-import { requestMovies } from 'components/services/appi';
+import { requestMovies } from 'services/appi';
 import Loader from 'components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
 import MovDetails from 'components/MovDetails/MovDetails';
